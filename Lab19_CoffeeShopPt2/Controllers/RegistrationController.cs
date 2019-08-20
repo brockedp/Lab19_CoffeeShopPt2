@@ -26,6 +26,12 @@ namespace Lab19_CoffeeShopPt2.Controllers
         {
             if (ModelState.IsValid)
             {
+                ViewBag.UserName = user.UserName;
+                ViewBag.FirstName = user.FirstName;
+                ViewBag.Birthday = user.Birthday;
+                ViewBag.Drink = user.Drink;
+                ViewBag.Email = user.Email;
+                ViewBag.Password = user.Password;
                 return View(user);
             }
             else

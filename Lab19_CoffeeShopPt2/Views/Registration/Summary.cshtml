@@ -6,7 +6,7 @@
 
 
 @model Lab19_CoffeeShopPt2.Models.RegisterUser
-    <div class="text-center">
+    @*<div class="text-center">
         <h2 class="display-2">Welcome @Model.FirstName</h2>
         <img src="~/fryCoffee.gif" title="The Shakes" />
         <ul class="pizza">
@@ -16,16 +16,31 @@
             <li> Your email is @Model.Email</li>
             <li> Your password is @Model.Password</li>
         </ul>
+    </div>*@
+    <div class="pizza">
+        <h2 class="display-2">Welcome @ViewBag.FirstName</h2>
+        <img src="~/fryCoffee.gif" title="The Shakes" />
+        <div>
+            <p> Your user name is @ViewBag.UserName</p>
+            <p> Your birthday is @ViewBag.Birthday.Date</p>
+            <p> Your drink of choice is @ViewBag.Drink</p>
+            <p> Your email is @ViewBag.Email</p>
+            <p> Your password is @ViewBag.Password</p>
+        </div>
     </div>
 
     <style>
         .pizza{
             font-size:larger;
+            background-color:aliceblue;
+            text-align:center;
+            background-size:contain;
+                
         }
         .pizza input{
             margin-right:8em;
         
-        }
+        }2
         .pizza label{
             position:absolute;
         
