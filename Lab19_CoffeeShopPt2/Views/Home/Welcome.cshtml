@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+@model Lab19_CoffeeShopPt2.Models.RegisterUser
+<div class="text-center">
+        <h2 class="display-2">Welcome @Model.FirstName</h2>
+        <img src="~/fryCoffee.gif" title="The Shakes" />
+        <ul class="pizza">
+            <li> Username: @Model.UserName</li>
+            <li> Birthday: @Model.Birthday.Date</li>
+            <li> Drink of choice: @Model.Drink</li>
+            <li> Email: @Model.Email</li>
+            <li> Password: @Model.Password</li>
+        </ul>
+    </div>
+
+
+<style>
+    .pizza {
+        font-size: larger;
+        background-color: aliceblue;
+        text-align: center;
+        background-size: contain;
+    }
+
+        .pizza input {
+            @*margin-right: 8em;*@
+        }
+
+    2
+    .pizza label {
+        position: absolute;
+    }
+</style>
+

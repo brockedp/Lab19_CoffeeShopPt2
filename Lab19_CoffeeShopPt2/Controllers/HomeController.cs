@@ -50,7 +50,7 @@ namespace Lab19_CoffeeShopPt2.Controllers
                 HttpContext.Session.SetString("RegisteredUserSession", JsonConvert.SerializeObject(registeredUsers));
 
 
-                return View("Summary", registeredUsers);
+                return View("Welcome", user);
 
             }
             else
