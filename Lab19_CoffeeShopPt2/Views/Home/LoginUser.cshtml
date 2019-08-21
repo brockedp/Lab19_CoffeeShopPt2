@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "LoginUser";
+}
+
+@model Lab19_CoffeeShopPt2.Models.RegisterUser
+<h1>Please Login </h1>
+<form asp-action="CheckUser" asp-controller="Home" method="post">
+    <p> Username: <input type="text" name="UserName" /></p>
+    <p>`Password: <input type="text" name="Password" /></p>
+    <p><input type="submit" value="Submit" /></p>
+
+
+</form>
+

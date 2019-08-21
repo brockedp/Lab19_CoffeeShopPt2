@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "Registration";
+}
+
+
+
+@model Lab19_CoffeeShopPt2.Models.RegisterUser
+
+
+@*GO TO WELCOME PAGE!!!! *@
+
+<form action="/Home/AddUser" method="post" class="space">
+
+    <h1 class="display-4">Registration</h1>
+
+    <div class="col-3">
+        User Name
+        <input type="text" name="UserName" value="@Model.UserName" placeholder="@Model.UserName" />
+        @Html.ValidationMessageFor(m => m.UserName)
+    </div>
+
+    <div class="col-3">
+        First Name
+        <input type="text" name="FirstName" value="@Model.FirstName" placeholder="@Model.FirstName" />
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+
+    <div class="col-3">
+        Birthday
+        <input type="date" name="Birthday" value="@Model.Birthday" placeholder="@Model.Birthday" />
+        @Html.ValidationMessageFor(m => m.Birthday)
+    </div>
+
+
+    <div class="col-3">
+        Email
+        <input type="text" name="Email" value="@Model.Email" placeholder="@Model.Email" />
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    <div class="col-3">
+        Password
+        <input type="text" name="Password" value="@Model.Password" placeholder="@Model.Password" />
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    <div class="col-3">
+        Drink of Choice
+
+        <p>None  @Html.RadioButtonFor(m => m.Drink, "none")</p>
+        <p>Coffee  @Html.RadioButtonFor(m => m.Drink, "coffee") </p>
+        <p>Tea @Html.RadioButtonFor(m => m.Drink, "tea") </p>
+        <p>Latte @Html.RadioButtonFor(m => m.Drink, "latte")</p>
+        <p>Cappucino @Html.RadioButtonFor(m => m.Drink, "cappucino")</p>
+        
+
+
+    </div>
+
+
+
+
+    <input type="submit" value="Submit" />
+</form>
+
+<style>
+
+    .space input {
+        margin-right: 9em;
+    }
+
+    .space label {
+        position: absolute;
+    }
+</style>
+
+
+
+
+
+
+
+
+

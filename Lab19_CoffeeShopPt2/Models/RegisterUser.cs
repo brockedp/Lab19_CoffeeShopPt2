@@ -8,8 +8,8 @@ namespace Lab19_CoffeeShopPt2.Models
 {
     public class RegisterUser
     {
-        [Required(ErrorMessage = "UserName must be 5 to 30 characters long")]
-        [RegularExpression(@"^([A-Za-z0-9]{5,30})$")]
+        [Required(ErrorMessage = "UserName must be 5 to 30 characters long and only letters and numbers")]
+        [RegularExpression(@"^([A-Za-z0-9]{1,30})$")]
         public string UserName { get; set; }
         [Required]
         public string FirstName { get; set; }
@@ -18,15 +18,21 @@ namespace Lab19_CoffeeShopPt2.Models
 
         public string Drink { get; set; }
 
-        [Required]
-        [RegularExpression(@"^([A-Za-z0-9]{5,30})@([A-Za-z0-9]{5,10}).([A-Za-z0-9]{2,3})$")]
+        [Required(ErrorMessage = "Must be an email that is at 5 characters long and contains an @")]
+        [RegularExpression(@"^([A-Za-z0-9]{1,30})@([A-Za-z0-9]{1,10}).([A-Za-z0-9]{2,3})$")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Password must be 5 to 30 characters long")]
-        [RegularExpression(@"^([A-Za-z0-9]{5,30})$")]
+        [Required(ErrorMessage = "Password must be 5 to 30 characters long and only letters and numbers")]
+        [RegularExpression(@"^([A-Za-z0-9]{1,30})$")]
         public string Password { get; set; }
 
 
-        
+        public enum DrinkOfChoice
+        {
+            coffee,
+            tea,
+            latte,
+            cappucino
+        };
 
     }
 }

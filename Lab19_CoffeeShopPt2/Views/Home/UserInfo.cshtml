@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "UserInfo";
+}
+
+@model Lab19_CoffeeShopPt2.Models.RegisterUser
+
+<table class="table">
+    <tr>
+        <th>UserName</th>
+        <th>First Name</th>
+        <th>Birthday</th>
+        <th>Drink of Choice</th>
+        <th>Email</th>
+        
+    </tr>
+    
+        <tr>
+            <td>@Model.UserName</td>
+            <td>@Model.FirstName</td>
+            <td>@Model.Birthday.Date</td>
+            <td>@Model.Drink</td>
+            <td>@Model.Email</td>
+            
+
+        </tr>
+    
+</table>
+
