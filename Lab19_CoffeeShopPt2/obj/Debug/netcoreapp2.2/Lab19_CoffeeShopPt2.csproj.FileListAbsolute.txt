@@ -33,3 +33,6 @@ C:\Users\Deno\Documents\Grand Circus\Labs\Lab19_CoffeeShopPt2\Lab19_CoffeeShopPt
 C:\Users\Deno\Documents\Grand Circus\Labs\Lab19_CoffeeShopPt2\Lab19_CoffeeShopPt2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Summary.g.cshtml.cs
 C:\Users\Deno\Documents\Grand Circus\Labs\Lab19_CoffeeShopPt2\Lab19_CoffeeShopPt2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Register.g.cshtml.cs
 C:\Users\Deno\Documents\Grand Circus\Labs\Lab19_CoffeeShopPt2\Lab19_CoffeeShopPt2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Welcome.g.cshtml.cs
+C:\Users\Deno\Documents\Grand Circus\Labs\Lab19_CoffeeShopPt2\Lab19_CoffeeShopPt2\obj\Debug\netcoreapp2.2\Razor\Views\Database\Shop.g.cshtml.cs
+C:\Users\Deno\Documents\Grand Circus\Labs\Lab19_CoffeeShopPt2\Lab19_CoffeeShopPt2\obj\Debug\netcoreapp2.2\Razor\Views\Database\Register.g.cshtml.cs
+C:\Users\Deno\Documents\Grand Circus\Labs\Lab19_CoffeeShopPt2\Lab19_CoffeeShopPt2\obj\Debug\netcoreapp2.2\Razor\Views\Database\Index.g.cshtml.cs

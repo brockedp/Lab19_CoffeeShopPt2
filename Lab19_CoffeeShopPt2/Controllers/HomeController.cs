@@ -13,7 +13,7 @@ namespace Lab19_CoffeeShopPt2.Controllers
     public class HomeController : Controller
     {
         List<RegisterUser> registeredUsers = new List<RegisterUser>();
-        RegisterUser user = new RegisterUser();
+        RegisterUser loginUser = new RegisterUser();
 
         public IActionResult Index()
         {
@@ -50,22 +50,31 @@ namespace Lab19_CoffeeShopPt2.Controllers
                 HttpContext.Session.SetString("RegisteredUserSession", JsonConvert.SerializeObject(registeredUsers));
 
 
-                return View("Welcome", user);
+                return RedirectToAction("Welcome", user);
 
             }
             else
             {
-                return View("Register", user);
+                return RedirectToAction("Register", user);
             }
 
             
         }
+        public IActionResult Welcome(RegisterUser user)
+        {
+            return View(user);
+        }
 
         public IActionResult Summary()
         {
+            
+            
             string registeredUserJson = HttpContext.Session.GetString("RegisteredUserSession");
             registeredUsers = JsonConvert.DeserializeObject<List<RegisterUser>>(registeredUserJson);
             return View(registeredUsers);
+               
+            
+            
         }
 
         public IActionResult LoginUser()
@@ -77,29 +86,42 @@ namespace Lab19_CoffeeShopPt2.Controllers
         [HttpPost]
         public IActionResult CheckUser( string UserName, string Password)
         {
-            int num = 0;
+            string registeredUserJson = HttpContext.Session.GetString("RegisteredUserSession");
+            registeredUsers = JsonConvert.DeserializeObject<List<RegisterUser>>(registeredUserJson);
+
             foreach (var item in registeredUsers)
             {
                 if ((item.UserName == UserName) && (item.Password == Password))
                 {
-                    string LoginUserJson = HttpContext.Session.GetString("LoginUserSession");
-                    user = registeredUsers[num];
-                    HttpContext.Session.SetString("LoginUserSession", JsonConvert.SerializeObject(user));
-                    break;
-                }
 
-                num++;
+                    string LoginUserJson = HttpContext.Session.GetString("LoginUserSession");
+                    loginUser = item;
+                  
+                    HttpContext.Session.SetString("LoginUserSession", JsonConvert.SerializeObject(loginUser));
+                    
+                   
+                }
+                
             }
-            return View("UserInfo", user);
-            
-            
+            return RedirectToAction("UserInfo");
 
         }
         public IActionResult UserInfo()
         {
+            
             string myUser = HttpContext.Session.GetString("LoginUserSession");
-            user = JsonConvert.DeserializeObject<RegisterUser>(myUser);
-            return View(user);
+            loginUser = JsonConvert.DeserializeObject<RegisterUser>(myUser);
+
+
+            return View(loginUser);
+            
+            
+           
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("LoginUserSession");
+            return RedirectToAction("Index");
         }
 
 
